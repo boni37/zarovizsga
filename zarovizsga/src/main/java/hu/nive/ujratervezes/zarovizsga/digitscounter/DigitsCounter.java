@@ -1,27 +1,22 @@
 package hu.nive.ujratervezes.zarovizsga.digitscounter;
 
-import java.util.Map;
-import java.util.TreeMap;
-
 public class DigitsCounter {
 
-    private String digitsPattern = "0123456789";
-
-
-    public int getCountOfDigits(String digits) {
-        if(digits==null || digits.isEmpty()) return 0;
-        Map<Integer,Integer> digitNumbers = new TreeMap<>();
-        String digitPatterns;
-        for(int i=0; i< digits.length();i++){
-            String digitInRow = String.valueOf(digits.charAt(i));
-
-            if(digitsPattern.contains(digitInRow)){
-                Integer keyDigit = Integer.parseInt(digitInRow);
-                if(digitNumbers.containsKey(keyDigit)){
-                    digitNumbers.put(keyDigit,digitNumbers.get(keyDigit)+1);
+    public int getCountOfDigits(String numbers) {
+        if (numbers == null || numbers.isBlank()) {
+            return 0;
+        }
+        int count = 0;
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < numbers.length(); i++) {
+            if (Character.isDigit(numbers.charAt(i))) {
+                String s = String.valueOf(numbers.charAt(i));
+                if (!sb.toString().contains(s)) {
+                    sb.append(s);
+                    count += 1;
                 }
-                digitNumbers.put(keyDigit,1);
             }
-        } return digitNumbers.size();
+        }
+        return count;
     }
 }

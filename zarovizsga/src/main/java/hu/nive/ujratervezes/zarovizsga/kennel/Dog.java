@@ -2,23 +2,19 @@ package hu.nive.ujratervezes.zarovizsga.kennel;
 
 public abstract class Dog {
 
-    private String name;
-    private int happiness;
+    String name;
+    int happiness;
 
     public Dog(String name) {
         this.name = name;
         this.happiness = 0;
     }
 
-    public String getName() {
-        return name;
-    }
+    abstract void feed();
 
-    public int getHappiness() {
-        return happiness;
-    }
+    abstract void play(int hours);
 
-    public abstract void play(int i);
+    public abstract String getName();
 
-    public abstract void feed();
+    public abstract int getHappiness();
 }

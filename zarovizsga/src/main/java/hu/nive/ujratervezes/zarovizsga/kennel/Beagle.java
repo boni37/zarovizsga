@@ -1,11 +1,14 @@
 package hu.nive.ujratervezes.zarovizsga.kennel;
 
-public class Beagle extends Dog{
-
-    private int happiness;
+public class Beagle extends Dog {
 
     public Beagle(String name) {
         super(name);
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     @Override
@@ -14,12 +17,12 @@ public class Beagle extends Dog{
     }
 
     @Override
-    public void play(int i) {
-        this.happiness += i*2;
+    void feed() {
+        this.happiness += 2;
     }
 
     @Override
-    public void feed() {
-        this.happiness += 2;
+    void play(int hours) {
+        this.happiness += hours * 2;
     }
 }

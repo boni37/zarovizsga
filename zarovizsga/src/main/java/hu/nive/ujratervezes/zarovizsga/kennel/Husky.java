@@ -1,11 +1,14 @@
 package hu.nive.ujratervezes.zarovizsga.kennel;
 
-public class Husky extends Dog{
-
-    private int happiness;
+public class Husky extends Dog {
 
     public Husky(String name) {
         super(name);
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     @Override
@@ -14,12 +17,12 @@ public class Husky extends Dog{
     }
 
     @Override
-    public void play(int i) {
-        this.happiness += i*3;
+    void feed() {
+        this.happiness += 4;
     }
 
     @Override
-    public void feed() {
-        this.happiness += 4;
+    void play(int hours) {
+        this.happiness += hours * 3;
     }
 }

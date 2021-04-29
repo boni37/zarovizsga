@@ -30,6 +30,7 @@ public class KennelTest {
 
     @Test
     void testFeedAll() {
+        System.out.println(1);
         kennel.feedAll();
         assertEquals(2, kennel.getDogs().get(0).getHappiness());
         assertEquals(4, kennel.getDogs().get(1).getHappiness());
